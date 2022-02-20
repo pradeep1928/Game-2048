@@ -234,4 +234,4 @@ function winner() {
 //     let result = document.getElementById("result");
 //     result.innerHTML = "<h3> Game Over, You lose!! </h3>";
 //   }
-// }
+// } 
