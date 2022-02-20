@@ -61,7 +61,7 @@ function hasEmptyTile() {
 // Function to find blank spot and set it with 2
 function setTwo() {
   if (!hasEmptyTile()) {
-    return gameOver();
+    return;
   }
   let found = false;
   while (!found) {
@@ -221,17 +221,17 @@ function winner() {
 }
 
 // function to show the Game over if there is no blank tiles ramaining
-function gameOver() {
-  let zeros = 0;
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      if (board[r][c] == 0) {
-        zeros++;
-      }
-    }
-  }
-  if (zeros == 0) {
-    let result = document.getElementById("result");
-    result.innerHTML = "<h3> Game Over, You lose!! </h3>";
-  }
-}
+// function gameOver() {
+//   let zeros = 0;
+//   for (let r = 0; r < rows; r++) {
+//     for (let c = 0; c < cols; c++) {
+//       if (board[r][c] == 0) {
+//         zeros++;
+//       }
+//     }
+//   }
+//   if (zeros == 0) {
+//     let result = document.getElementById("result");
+//     result.innerHTML = "<h3> Game Over, You lose!! </h3>";
+//   }
+// }
