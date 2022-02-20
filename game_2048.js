@@ -7,11 +7,10 @@ function reloadGame() {
   location.reload();
 }
 
-
 function howToPlay() {
-    alert(
-      "Tiles with matching number values will be merged into a single tile, which receives the sum of values. To move the board use the direction arrow keys. To win the game get a 2048 tile."
-    );
+  alert(
+    "Tiles with matching number values will be merged into a single tile, which receives the sum of values. To move the board use the direction arrow keys. To win the game get a 2048 tile."
+  );
 }
 
 window.onload = function () {
@@ -98,18 +97,22 @@ document.addEventListener("keyup", (e) => {
     slideLeft();
     setTwo();
     winner();
+    gameOver();
   } else if (e.code == "ArrowRight") {
     slideRight();
     setTwo();
     winner();
+    gameOver();
   } else if (e.code == "ArrowUp") {
     slideUp();
     setTwo();
     winner();
+    gameOver();
   } else if (e.code == "ArrowDown") {
     slideDown();
     setTwo();
     winner();
+    gameOver();
   }
   document.getElementById("score").innerText = score;
 });
@@ -212,7 +215,7 @@ function slideDown() {
 function winner() {
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
-      if (board[r][c] == 16) {
+      if (board[r][c] == 2048) {
         let result = document.getElementById("result");
         let result_small = document.getElementById("result_small");
         result.innerHTML = "<h3> Congratulations!! You won! </h3>";
@@ -223,20 +226,22 @@ function winner() {
 }
 
 // function to show the Game over if there is no blank tiles ramaining
-// function gameOver() {
-//   let zeros = 0;
-//   for (let r = 0; r < rows; r++) {
-//     for (let c = 0; c < cols; c++) {
-//       if (board[r][c] == 0) {
-//         zeros++;
-//       }
-//     }
-//   }
-//   if (zeros == 0) {
-//     let result = document.getElementById("result");
-//     result.innerHTML = "<h3> Game Over!!! </h3>";
-//   }
-// }
+function gameOver() {
+  let zeros = 0;
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (board[r][c] == board[r + 1][c] && board[r][c] == board[r][c + 1]) {
+        if (board[r][c] == 0) {
+          zeros++;
+        }
+      }
+    }
+  }
+  if (zeros == 0) {
+    let result = document.getElementById("result");
+    result.innerHTML = "<h3> Game Over!!! </h3>";
+  }
+}
 
 // Touch movements for mobile use
 document.addEventListener("touchstart", handleTouchStart, false);
