@@ -7,15 +7,15 @@ function reloadGame() {
   location.reload();
 }
 
-function showInfo() {
-  alert(
-    "Tiles with matching number values will be merged into a single tile, which receives the sum of values. To move the board use the direction arrow keys. To win the game get a 2048 tile."
-  );
+
+function howToPlay() {
+    alert(
+      "Tiles with matching number values will be merged into a single tile, which receives the sum of values. To move the board use the direction arrow keys. To win the game get a 2048 tile."
+    );
 }
 
 window.onload = function () {
   setGame();
-  showInfo();
 };
 
 function setGame() {
@@ -212,9 +212,11 @@ function slideDown() {
 function winner() {
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
-      if (board[r][c] == 2048) {
+      if (board[r][c] == 16) {
         let result = document.getElementById("result");
+        let result_small = document.getElementById("result_small");
         result.innerHTML = "<h3> Congratulations!! You won! </h3>";
+        result_small.innerHTML = "<h3> Congratulations!! You won! </h3>";
       }
     }
   }
@@ -234,4 +236,4 @@ function winner() {
 //     let result = document.getElementById("result");
 //     result.innerHTML = "<h3> Game Over, You lose!! </h3>";
 //   }
-// } 
+// }

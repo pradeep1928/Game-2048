@@ -12,7 +12,21 @@ body {
   margin: 0 40px;
 }
 
-button#restart {
+#result_small {
+  display: none;
+  visibility: hidden;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+#howToPlay {
+  margin-bottom: 15px;
+}
+
+button.btn_btn {
   width: 150px;
   height: 45px;
   background-color: #F14A16;
@@ -114,12 +128,25 @@ hr {
     justify-content: space-around;
     margin: 0 20px;
   }
-  button#restart { 
+  #result_small {
+    display: block;
+    visibility: visible;
+  }
+  #result {
+    display: none;
+    visibility: none;
+  }
+  button.btn_btn { 
     margin-top: 30px;
   }
-
-
+  .buttons {
+    flex-direction: row;
+  }
+  #howToPlay {
+    margin-right: 15px;
+  }
 }
+
 @media screen and (max-width: 576px) {
   .gameContainer {
     flex-direction: column-reverse;
@@ -127,7 +154,7 @@ hr {
     justify-content: space-around;
     margin: 0 5px;
   }
-  button#restart {
+  button.btn_btn {
     width: 140px;
     height: 42px;  
     margin-top: 30px;
