@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.gameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  margin: 0 40px;
+}
+
+button#restart {
+  width: 150px;
+  height: 45px;
+  background-color: #F14A16;
+  color: #ffffff;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+hr {
+  width: 500px;
+  height: 5px;
+  background-color: #E3B7A0;
+}
+
+#board {
+  width: 400px;
+  height: 400px;
+  background-color: #EDCDBB;
+  border: 5px solid #E3B7A0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile {
+  width: 90px;
+  height: 90px;
+  border: 5px solid #E3B7A0;
+  font-size: 34px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.n2 {
+  background-color: #FFE4C0;
+  color: #727371;
+}
+.n4 {
+  background-color: #ff915e;
+  color: #ffffff;
+}
+.n8 {
+  background-color: #F47340;
+  color: #ffffff;
+}
+.n16 {
+  background-color: #F14A16;
+  color: #fff;
+}
+.n32 {
+  background-color: #EA5C2B;
+  color: #ffffff; 
+}
+.n64 {
+  background-color: #FC4F4F;
+  color: #ffffff;
+}
+.n128 {
+  background-color: #FF6363;
+  color: #fff;
+}
+.n256 {
+  background-color: #D9534F;
+  color: #ffffff;
+}
+.n512 {
+  background-color: #864879;
+  color: #ffffff;
+}
+.n1024 {
+  background-color: #A2416B;
+  color: #ffffff;
+}
+.n2048 {
+  background-color: #9C0F48;
+  color: #ffffff;
+}
+.n4096 {
+  background-color: #781D42;
+  color: #ffffff;
+}
+.n8192 {
+  background-color: #641e3a;
+  color: #ffffff;
+}
+.n16384 {
+  background-color: palegreen;
+  color: #727371;
+}
+
+
+@media screen and (max-width: 768px) {
+  .gameContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 20px;
+  }
+  button#restart { 
+    margin-top: 30px;
+  }
+
+
+}
+@media screen and (max-width: 576px) {
+  .gameContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 5px;
+  }
+  button#restart {
+    width: 140px;
+    height: 42px;  
+    margin-top: 30px;
+  }
+  
+  #board {
+    width: 320px;
+    height: 320px;
+    border: 3px solid #E3B7A0;
+  }
+  
+  .tile {
+    width: 74px;
+    height: 74px;
+    border: 3px solid #E3B7A0;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+}
